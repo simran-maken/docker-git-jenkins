@@ -13,7 +13,7 @@ pipeline
 			{
 				script
 				{
-					sh "docker image pull simranmaken/python:version3"
+					im = docker.image("simranmaken/python:version3").pull()
 				}
 			}
 		}
@@ -21,7 +21,7 @@ pipeline
 		{
 			steps
 			{
-				echo "image name: ${Image.imagename}"
+				echo "image name: ${Image.imageName}"
 			}
 		}
 	}
