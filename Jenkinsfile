@@ -5,13 +5,19 @@ pipeline
 	{
 		stage("create docker image")
 		{
-			agent
-			{
-				dockerfile true
-			}
 			steps
 			{
-				echo "container id: ${Container.id}"
+				script
+				{
+					sh "docker image pull simranmaken/python:version3"
+				}
+			}
+		}
+		stage("Image name")
+		{
+			steps
+			{
+				echo "image name: ${Image.imagename}"
 			}
 		}
 	}
