@@ -11,7 +11,7 @@ pipeline
 			}
 			steps
 			{
-				echo "container id: ", Container.id
+				echo "container id: ${Container.id}"
 			}
 		}
 	}
